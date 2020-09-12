@@ -10,7 +10,7 @@ When trying to connect remotely to your Heroku database on an open network such 
 
 ### Important
 
-* **This assignment must be deployed.** Be sure to utilize the [MYSQL Heroku Deployment Guide](../../03-Supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
+* **This assignment must be deployed.** Be sure to utilize the [MYSQL Heroku Deployment Guide](../../supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
 
 ### Before You Begin
 
