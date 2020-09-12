@@ -1,13 +1,20 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-	port: 3306,
-	host: "localhost",
-	user: "root",
-	password: "12345678",
-	database: "burgers_db",
-});
+var connection;
+
+// MySQLHerokuDeploymentProcess.pdf
+if (process.env.JAWSBD_URL) {
+	connection = mysql.createConnection(process.env.JAWSBD_URL);
+} else {
+	connection = mysql.createConnection({
+		port: 3306,
+		host: "localhost",
+		user: "root",
+		password: "12345678",
+		database: "burgers_db",
+	});
+}
 
 // Make connection.
 connection.connect(function (err) {
