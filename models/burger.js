@@ -1,3 +1,4 @@
+// import orm.js into burger.js
 const orm = require("../config/orm.js");
 
 /*Model*/
@@ -26,7 +27,6 @@ const burger = {
 		});
 	},
 };
-// End of Burger Object
 
 /*Exports*/
 module.exports = burger;
