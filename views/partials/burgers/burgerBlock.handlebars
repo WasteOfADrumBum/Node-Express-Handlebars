@@ -1,0 +1,9 @@
+{{!-- © Ben --}}
+<div>{{burger_name}}</div>
+
+<form class="custForm" action="/api/burger/update"  method="get">
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="hidden" name="devoured" value="{{devoured}}">
+    <input type="submit" class="btn-secondary" value="{{icon}}">
+    {{!-- <input type="submit" value="{{#if devoured}}X{{else}}+{{/if}}"> --}}
+</form>

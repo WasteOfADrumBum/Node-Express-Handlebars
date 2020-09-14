@@ -26,6 +26,11 @@ const burger = {
 			callback(result);
 		});
 	},
+
+	findByIdAndUpdate: (id, obj, cb) => {
+		const condition = "id = " + id;
+		orm.updateByCondition("burgers", obj, condition, cb);
+	},
 };
 
 /*Exports*/

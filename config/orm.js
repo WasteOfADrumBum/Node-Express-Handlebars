@@ -35,10 +35,13 @@ const orm = {
 		});
 	},
 
-	updateOne: (tableName, cols, vals, condition, callback) => {
-		let queryStatement = `UPDATE ${tableName} SET ${cols.toString()} = ? WHERE ${condition}`;
+	// © Ben
+	updateByCondition: (tableName, obj, condition, callback) => {
+		let queryStatement = `UPDATE ?? SET ? WHERE ${condition}`;
 
-		connection.query(queryStatement, vals, (err, result) => {
+		const data = [tableName, obj];
+
+		connection.query(queryStatement, data, (err, result) => {
 			if (err) throw err;
 			console.log("Sucesfully Updated");
 			console.log("Executing Third Declared CallBack");

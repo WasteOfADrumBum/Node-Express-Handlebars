@@ -1,0 +1,35 @@
+.navbar {
+	padding: 1.2rem;
+	margin: 0 0 1.2rem 0;
+}
+
+.burgerForm input {
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.burgerForm button {
+	padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.custForm .btn-secondary {
+	padding: 0.2rem;
+}
+
+.custForm {
+	margin-bottom: 1rem;
+}
+
+h2 {
+	padding: 2rem;
+}
+
+h5 {
+	font-style: italic;
+	margin-bottom: 2rem;
+}
+
+footer {
+	padding: 60px 50px;
+}

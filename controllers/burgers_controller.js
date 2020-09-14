@@ -6,8 +6,6 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 /* Get Routes */
-
-// Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
 	console.log("Route Path Hit");
 	burger.selectAll((data) => {
@@ -24,27 +22,25 @@ router.post("/api/burger", function (req, res) {
 	console.log("burger Route Hit");
 	burger.insertOne(
 		["burger_name", "devoured"],
-		[req.body["burger_name"], req.body.devoured],
+		[req.body.burger_name, req.body.devoured],
 		(result) => {
-			// Send back the ID of the new quote
 			console.log(result);
-			res.json(result);
+			res.redirect("/");
 		},
 	);
 });
 
-router.put("/api/burger/:id", function (req, res) {
-	let burgerID = req.params.id;
-	let condition = "id = " + burgerID;
-
-	console.log("burger Route Hit. ID is " + burgerID);
-	console.log("Dev is " + req.body.devoured);
-
-	burger.updateOne(["devoured"], [req.body.devoured], condition, (result) => {
-		// Send back the ID of the new quote
-		console.log("Executing First Declared CallBack");
-		res.json(result);
-	});
+// © Ben
+// ORM.js -> updateByCondition
+router.get("/api/burger/update", function (req, res) {
+	burger.findByIdAndUpdate(
+		req.query.id,
+		{ devoured: req.query.devoured },
+		(result) => {
+			console.log("Executing First Declared CallBack");
+			res.redirect("/");
+		},
+	);
 });
 
 // Export routes for server.js to use.

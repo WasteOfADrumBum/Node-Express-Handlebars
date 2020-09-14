@@ -1,43 +1,93 @@
-<div id ="headerSection">
-  <h2>Eat Da Burger</h2>
+<div class="jumbotron text-center">
+  <h1 class="display-3">Eat-Da-Burger!</h1>
+  <hr class="my-4">
+  <p>Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.</p>
 </div>
 
 <!-- Middle Section -->
-<div id="middleSection">
+<div class="container" id="middleSection">
 
-  <!-- Left  -->
-  <div class="leftMiddle">
-    <div class="uneaten center">
-      {{#each burger}}
-        {{#unless devoured}}
-          {{> burgers/burgerBlock devoured=1}}
-        {{/unless}}
-      {{/each}}
+  <div class="row">
+    <!-- Left  -->
+    <div class="col-md-4 leftMiddle text-center">
+      <h2 class="bg-success">Burgers Customer's Would Like To Eat:</h2>
+      <h5 class="text-success">Waiting to be Devoured</h5>
+      <div class="uneaten">
+        {{#each burger}}
+          {{#unless devoured}}
+            {{> burgers/burgerBlock devoured=1 icon="Devour it!"}}
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- Center -->
+    <div class="col-md-4 centerMiddle text-center">
+      <h2 class="bg-secondary">What Burger Would You Like To Eat?</h2>
+      <div class="burgerForm">
+        <form action="/api/burger" method="post">
+        <input type="text" name="burger_name" required>
+        <input type="hidden" name="devoured" value="0">
+        <button type="submit" class="btn btn-secondary"> + <i class="fas fa-hamburger"></i> </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="col-md-4 rightMiddle text-center">
+      <h2 class="bg-primary">Burgers Customer's Have Already Ate:</h2>
+      <h5 class="text-primary">Been Devoured</h5>
+      <div class="eaten">
+        {{#each burger}}
+          {{#if devoured}}
+            {{> burgers/burgerBlock devoured=0 icon="Make it again!"}}
+          {{/if}}
+        {{/each}}
+      </div>
     </div>
   </div>
-
-  <!-- Center -->
-  <div class="centerMiddle">
-    <div class="center">
-      <input id="burgerName" type="text" placeholder="Name of Your Burger" data-eaten="0">
-      <button id="addBurger" type="button">Add Your Burger</button>
-    </div>
-  </div>
-
-  <!-- Right -->
-  <div class="rightMiddle">
-    <div class="eaten center">
-      {{#each burger}}
-        {{#if devoured}}
-          {{> burgers/burgerBlock devoured=0}}
-        {{/if}}
-      {{/each}}
-    </div>
-  </div>
-
 </div>
 <!-- End of Middle Section -->
 
-<div id ="footerSection">
-  <p>Copyright © 2020 Joshua M. Small</p>
-</div>
+<footer class="container-fluid text-center" id ="footerSection">
+  <div class="row">
+    <div class="col-md-12">
+        <!--Facebook-->
+        <a href="https://www.facebook.com/WasteOfADrumBum/" target="_blank" class="btn-floating btn-lg btn-outline-info btn-facebook" type="button" role="button">
+            <i class="fab fa-facebook-f "></i>
+        </a>
+        <!--Instagram-->
+        <a href="https://www.instagram.com/lost.between.thoughts/?hl=en" target="_blank" class="btn-floating btn-lg btn-outline-info btn-instagram" type="button" role="button">
+            <i class="fab fa-instagram "></i>
+        </a>
+        <!--Snapchat-->
+        <a href="https://www.snapchat.com/add/wasteofadrumbum" target="_blank" class="btn-floating btn-lg btn-outline-info btn-snapchat" type="button" role="button">
+            <i class="fab fa-snapchat-ghost "></i>
+        </a>
+        <!--Steam-->
+        <a href="https://steamcommunity.com/id/wasteofadrumbum/" target="_blank" class="btn-floating btn-lg btn-outline-info btn-steam" type="button" role="button">
+            <i class="fab fa-steam "></i>
+        </a>
+        <!--Soundcloud-->
+        <a href="https://soundcloud.com/wasteofadrumbum" target="_blank" class="btn-floating btn-lg btn-outline-info btn-soundcloud" type="button" role="button">
+            <i class="fab fa-soundcloud "></i>
+        </a>
+        <!--LinkedIn-->
+        <a href="https://www.linkedin.com/in/joshuamsmall/" target="_blank" class="btn-floating btn-lg btn-outline-info btn-linkedin" type="button" role="button">
+            <i class="fab fa-linkedin "></i>
+        </a>
+        <!--Stack Overflow-->
+        <a href="https://stackoverflow.com/users/13681415/wasteofadrumbum" target="_blank" class="btn-floating btn-lg btn-outline-info btn-stack-overflow" type="button" role="button">
+            <i class="fab fa-stack-overflow"></i>
+        </a>
+        <!--GitHub--> <a href="https://github.com/WasteOfADrumBum" target="_blank" class="btn-floating btn-lg btn-outline-info btn-github" type="button" role="button">
+            <i class="fab fa-github "></i>
+        </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h6>Copyright © 2020 Joshua M. Small</h6>
+    </div>
+  </div>
+</footer>
