@@ -5,7 +5,7 @@ const router = express.Router();
 // Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
-/* Get Routes */
+// Get Route
 router.get("/", function (req, res) {
 	console.log("Route Path Hit");
 	burger.selectAll((data) => {
@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
 	});
 });
 
-/* Post Routes */
+// Post Route
 router.post("/api/burger", function (req, res) {
 	console.log("burger Route Hit");
 	burger.insertOne(
@@ -31,6 +31,7 @@ router.post("/api/burger", function (req, res) {
 });
 
 // © Ben
+// Get Route
 // ORM.js -> updateByCondition
 router.get("/api/burger/update", function (req, res) {
 	burger.findByIdAndUpdate(
@@ -43,5 +44,5 @@ router.get("/api/burger/update", function (req, res) {
 	);
 });
 
-// Export routes for server.js to use.
+// Export routes for server.js to use
 module.exports = router;

@@ -1,6 +1,7 @@
 {{!-- © Ben --}}
 <div>{{burger_name}}</div>
 
+{{!-- Create form and btn's for wait/devoured lists on index.handlebars --}}
 <form class="custForm" action="/api/burger/update"  method="get">
     <input type="hidden" name="id" value="{{id}}">
     <input type="hidden" name="devoured" value="{{devoured}}">

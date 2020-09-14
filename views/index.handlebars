@@ -1,45 +1,49 @@
+<!-- || JUMBOTRON || -->
 <div class="jumbotron text-center">
   <h1 class="display-3">Eat-Da-Burger!</h1>
   <hr class="my-4">
   <p>Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.</p>
 </div>
 
-<!-- Middle Section -->
+<!-- || BODY CONTAINER || -->
 <div class="container" id="middleSection">
 
   <div class="row">
-    <!-- Left  -->
+    <!-- Burger Wait List  -->
     <div class="col-md-4 leftMiddle text-center">
       <h2 class="bg-success">Burgers Customer's Would Like To Eat:</h2>
       <h5 class="text-success">Waiting to be Devoured</h5>
       <div class="uneaten">
         {{#each burger}}
           {{#unless devoured}}
+            <!-- burgerBlock.handlebars icon="Devour it!" btn display text -->
             {{> burgers/burgerBlock devoured=1 icon="Devour it!"}}
           {{/unless}}
         {{/each}}
       </div>
     </div>
 
-    <!-- Center -->
+    <!-- Burger Input Form -->
     <div class="col-md-4 centerMiddle text-center">
       <h2 class="bg-secondary">What Burger Would You Like To Eat?</h2>
       <div class="burgerForm">
         <form action="/api/burger" method="post">
         <input type="text" name="burger_name" required>
         <input type="hidden" name="devoured" value="0">
+        <!-- Submit Button ++Burger -->
         <button type="submit" class="btn btn-secondary"> + <i class="fas fa-hamburger"></i> </button>
         </form>
       </div>
     </div>
 
-    <!-- Right -->
+    <!-- Buger Devoured List -->
     <div class="col-md-4 rightMiddle text-center">
       <h2 class="bg-primary">Burgers Customer's Have Already Ate:</h2>
       <h5 class="text-primary">Been Devoured</h5>
       <div class="eaten">
         {{#each burger}}
           {{#if devoured}}
+            <!-- burgerBlock.handlebars icon="Make it again!" btn display text -->
             {{> burgers/burgerBlock devoured=0 icon="Make it again!"}}
           {{/if}}
         {{/each}}
@@ -47,9 +51,10 @@
     </div>
   </div>
 </div>
-<!-- End of Middle Section -->
 
+<!-- || FOOTER || -->
 <footer class="container-fluid text-center" id ="footerSection">
+  <!--- Social Media Links -->
   <div class="row">
     <div class="col-md-12">
         <!--Facebook-->
@@ -85,6 +90,7 @@
         </a>
     </div>
   </div>
+  <!-- Copyright -->
   <div class="row">
     <div class="col-md-12">
       <h6>Copyright © 2020 Joshua M. Small</h6>

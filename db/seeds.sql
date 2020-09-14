@@ -1,6 +1,7 @@
   
 USE burgers_db;
 
+/* seed.sql for burgers_db from buger.js */
 INSERT INTO burgers (id, burger_name, devoured, date)
 VALUES
 (null, "Cheese Burger", FALSE, null),
