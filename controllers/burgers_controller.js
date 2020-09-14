@@ -6,25 +6,23 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 // Get Route
+// Display burgers
 router.get("/", function (req, res) {
 	console.log("Route Path Hit");
 	burger.selectAll((data) => {
 		handlebarsObject = {
 			burger: data,
 		};
-		console.log("Diplayed Burgers");
 		res.render("index", handlebarsObject);
 	});
 });
 
 // Post Route
 router.post("/api/burger", function (req, res) {
-	console.log("burger Route Hit");
 	burger.insertOne(
 		["burger_name", "devoured"],
 		[req.body.burger_name, req.body.devoured],
 		(result) => {
-			console.log(result);
 			res.redirect("/");
 		},
 	);
@@ -38,7 +36,6 @@ router.get("/api/burger/update", function (req, res) {
 		req.query.id,
 		{ devoured: req.query.devoured },
 		(result) => {
-			console.log("Executing First Declared CallBack");
 			res.redirect("/");
 		},
 	);
