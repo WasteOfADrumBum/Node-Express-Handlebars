@@ -31,7 +31,7 @@ Eat-Da-Burger! is a restaurant app that lets users input the names of burgers th
 
 ## Instructions
 
-Heroku link: URL
+- [Click Here to Launch Application on Heroku](https://infinite-shore-82564.herokuapp.com/)
 
 ## Features
 
@@ -43,7 +43,7 @@ Heroku link: URL
 
 ## Example Gif
 
-<img src="assets\images\eatdaburger.gif" width="500" />
+<img src="public\assets\images\eatdaburger.gif" width="500" />
 
 ## Repository
 
