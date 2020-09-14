@@ -14,11 +14,12 @@
 
 .btn-outline-secondary {
 	color: #fff;
+	font-size: 1rem;
 	border-width: 2px;
 	border-style: outset;
 }
 
-.custForm .btn-secondary {
+.custForm .btn-outline-secondary {
 	padding: 0.2rem;
 }
 
@@ -45,6 +46,13 @@ h5 {
 .rightMiddle {
 	margin: 2rem 0 2rem 0;
 }
+
+.eaten,
+.uneaten {
+	font-size: 1.5rem;
+}
+
+/* -- || Footer || -- */
 
 footer {
 	padding: 1rem;
@@ -76,8 +84,9 @@ html::-webkit-scrollbar-track {
 .eaten {
 	/* Scrollbar after ~5 burgers */
 	overflow-y: auto;
-	/* ~78px per option */
-	max-height: 390px;
+	overflow-x: hidden;
+	/* ~94.4px per option */
+	max-height: 472px;
 }
 
 /* width */
