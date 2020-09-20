@@ -44,7 +44,7 @@ router.post("/api/burger/delete", (req, res) => {
 	console.log(req.body);
 	burger.deleteOne(req.body.id, (result) => {
 		res.redirect("/");
-	}); // → burgers.js findByIdAndRemove
+	}); // → burgers.js
 });
 
 // Export routes for server.js to use
