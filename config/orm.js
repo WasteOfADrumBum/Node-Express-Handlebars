@@ -49,7 +49,6 @@ const orm = {
 		});
 	},
 
-	// -------------------- ↓ NOT WORKING ↓ --------------------
 	// burger.js deleteOne →
 	deleteOne: (tableName, condition, cb) => {
 		var queryString = `DELETE FROM ?? WHERE ${condition}`;

@@ -40,11 +40,9 @@ router.get("/api/burger/update", (req, res) => {
 	});
 });
 
-// -------------------- ↓ NOT WORKING ↓ --------------------
 router.post("/api/burger/delete", (req, res) => {
 	console.log(req.body);
 	burger.deleteOne(req.body.id, (result) => {
-		console.log("Delete Router");
 		res.redirect("/");
 	}); // → burgers.js findByIdAndRemove
 });

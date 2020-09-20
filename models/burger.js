@@ -29,7 +29,6 @@ const burger = {
 		orm.updateOne("burgers", obj, condition, cb);
 	}, // → orm.js updateOne
 
-	// -------------------- ↓ NOT WORKING ↓ --------------------
 	deleteOne: (id, cb) => {
 		const condition = "id = " + id;
 		orm.deleteOne("burgers", condition, cb);
