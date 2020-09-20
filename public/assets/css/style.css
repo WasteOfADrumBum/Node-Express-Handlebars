@@ -8,7 +8,7 @@
 	padding: 0.5rem 2rem 0.5rem 2rem;
 }
 
-.btn-icon {
+.burger-btn-row {
 	margin-top: 0.5rem;
 }
 
@@ -85,8 +85,7 @@ html::-webkit-scrollbar-track {
 	/* Scrollbar after ~5 burgers */
 	overflow-y: auto;
 	overflow-x: hidden;
-	/* ~94.4px per option */
-	max-height: 472px;
+	max-height: 491px;
 }
 
 /* width */

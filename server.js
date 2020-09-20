@@ -1,5 +1,7 @@
 // Require Express
 const express = require("express");
+// Require Path
+const path = require("path");
 // Allows Acesses to JSON Body from POST
 const bodyParser = require("body-parser");
 // Require Handlebars
@@ -8,10 +10,13 @@ const exphbs = require("express-handlebars");
 const app = express();
 // Set Default Port for Express and Heroku
 let PORT = process.env.PORT || 9080; // https://localhost:9080
-// Add Additional Functionality to Express Using Middleware body-parser
+// Add Additional Functionality to Express Using body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
+// Parse request body as JSON
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 // Serve Static from the "public" Directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public")));
 // Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");

@@ -1,8 +1,11 @@
+// ╔═════╗
+// ║ ORM ║
+// ╚═════╝
+
 // Import MySQL connection
 const connection = require("../config/connection.js");
-const tableName = "burgers";
 
-// Helper Function
+// Helper Function → insertOne
 function printQuestionMarks(num) {
 	var arr = [];
 	for (var i = 0; i < num; i++) {
@@ -13,39 +16,50 @@ function printQuestionMarks(num) {
 
 // ORM
 const orm = {
-	selectAll: (tableName, callback) => {
-		let queryStatement = `SELECT * FROM ${tableName};`;
-		// initialize
-		connection.query(queryStatement, (err, result) => {
+	// burger.js selectAll →
+	all: (tableName, cb) => {
+		var queryString = `SELECT * FROM ??`;
+		// load table
+		connection.query(queryString, [tableName, cb], (err, res) => {
 			if (err) throw err;
-			callback(result);
+			cb(res);
 		});
 	},
 
-	// Insert burger into burgers_db displaying it on the waitlist
-	insertOne: (tableName, cols, vals, callback) => {
-		let queryStatement = `INSERT INTO  ${tableName} (${cols.toString()}) VALUES (${printQuestionMarks(
+	// burger.js insertOne →
+	insertOne: (tableName, cols, vals, cb) => {
+		var queryString = `INSERT INTO  ${tableName} (${cols.toString()}) VALUES (${printQuestionMarks(
 			vals.length,
 		)});`;
 		// add burger
-		connection.query(queryStatement, vals, (err, result) => {
+		connection.query(queryString, vals, (err, res) => {
 			if (err) throw err;
-			callback(result);
+			cb(res);
 		});
 	},
 
 	// © Ben
-	// updtae the condition of the burger waitlist/devoured
-	updateByCondition: (tableName, obj, condition, callback) => {
-		let queryStatement = `UPDATE ?? SET ? WHERE ${condition}`;
-		const data = [tableName, obj];
+	// burger.js updateOne →
+	updateOne: (tableName, obj, condition, cb) => {
+		var queryString = `UPDATE ?? SET ? WHERE ${condition}`;
 		// update condition
-		connection.query(queryStatement, data, (err, result) => {
+		connection.query(queryString, [tableName, obj], (err, res) => {
 			if (err) throw err;
-			callback(result);
+			cb(res);
+		});
+	},
+
+	// -------------------- ↓ NOT WORKING ↓ --------------------
+	// burger.js deleteOne →
+	deleteOne: (tableName, condition, cb) => {
+		var queryString = `DELETE FROM ?? WHERE ${condition}`;
+		// delete burger
+		connection.query(queryString, [tableName], (err, res) => {
+			if (err) throw err;
+			cb(res);
 		});
 	},
 };
 
-// Exports
+// Exports → orm.js
 module.exports = orm;

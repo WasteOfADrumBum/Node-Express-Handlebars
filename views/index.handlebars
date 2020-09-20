@@ -16,8 +16,7 @@
       <div class="uneaten">
         {{#each burger}}
           {{#unless devoured}}
-            <!-- burgerBlock.handlebars icon="Devour it!" btn display text -->
-            {{> burgers/burgerBlock devoured=1 icon="Devour it!"}}
+            {{> burgers/burgerBlock devoured=1}}
           {{/unless}}
         {{/each}}
       </div>
@@ -26,6 +25,7 @@
     <!-- Burger Input Form -->
     <div class="col-md-4 centerMiddle text-center">
       <h2 class="bg-secondary">What Burger Would You Like To Eat?</h2>
+      <h5>Order Here</h5>
       <div class="burgerForm">
         <form action="/api/burger" method="post">
         <input type="text" name="burger_name" required>
@@ -43,8 +43,7 @@
       <div class="eaten">
         {{#each burger}}
           {{#if devoured}}
-            <!-- burgerBlock.handlebars icon="Make it again!" btn display text -->
-            {{> burgers/burgerBlock devoured=0 icon="Make it again!"}}
+            {{> burgers/burgerBlock devoured=0}}
           {{/if}}
         {{/each}}
       </div>

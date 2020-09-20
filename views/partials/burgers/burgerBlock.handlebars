@@ -1,10 +1,23 @@
 {{!-- © Ben --}}
 <div>{{burger_name}}</div>
 
-{{!-- Create form and btn's for wait/devoured lists on index.handlebars --}}
-<form class="custForm" action="/api/burger/update"  method="get">
-    <input type="hidden" name="id" value="{{id}}">
-    <input type="hidden" name="devoured" value="{{devoured}}">
-    <input type="submit" class="btn-outline-secondary btn-icon" value="{{icon}}">
-    {{!-- <input type="submit" value="{{#if devoured}}X{{else}}+{{/if}}"> --}}
-</form>
+<div class="row burger-btn-row" id={{burger_name}}> 
+    <div class="col-md-3"></div>
+
+    {{!-- Create form and btn's for wait/devoured lists on index.handlebars --}}
+    <form class="custForm col-md-4 text-center" action="/api/burger/update"  method="get">
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="hidden" name="devoured" value="{{devoured}}">
+        <input type="submit" class="btn-outline-secondary btn-icon" value="{{#if devoured}}Devour it!{{else}}Make it again!{{/if}}">
+    </form>
+
+    {{!-- Delete --}}
+    <form class="custForm col-md-2 text-center" action="/api/burger/delete" method="POST" id="delete_burger">
+        <input type="hidden" name="id" value="{{id}}">
+        <button form="delete_burger" type="submit" class="btn btn-sm btn-outline-danger delete-burger">
+            <span class="text-danger" aria-hidden="true">&times;</span>
+        </button>
+    </form>
+
+    <div class="col-md-3"></div>
+</div>
