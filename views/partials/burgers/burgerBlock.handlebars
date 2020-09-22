@@ -12,22 +12,21 @@
     </form>
 
     {{!-- Delete --}}
-    {{!-- 
-    <form class="custForm col-md-2 text-center" action="/api/burger/delete" method="POST" id="delete_burger">
+
+    {{!-- working incorrectly --}}
+    <form class="custForm col-md-1 text-center" action="/api/burger/delete" method="POST" id="delete_burger">
         <input type="hidden" name="id" value="{{id}}">
         <button form="delete_burger" type="submit" class="btn btn-sm btn-outline-danger delete-burger">
             <span class="text-danger" aria-hidden="true">&times;</span>
         </button>
     </form> 
-    --}}
-
-    <div class="custForm col-md-2 text-center">
-      <button class="delete-burger" data-id="{{this.id}}" class="btn btn-sm btn-outline-danger delete-burger">
+    
+    {{!-- 404 error --}}
+    <div class="custForm col-md-1 text-center">
+      <button data-id="{{this.id}}" class="btn btn-sm btn-outline-danger delete-burger">
           <span class="text-danger" aria-hidden="true">&times;</span>
       </button>
     </div>    
-    {{!-- → burgers_controller.js --}}
-
     {{!-- → burgers_controller.js --}}
 
     <div class="col-md-3"></div>

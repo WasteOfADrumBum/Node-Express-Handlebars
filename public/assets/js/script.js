@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	$(".delete-burger").on("click", function (event) {
-		event.preventDefault();
+		// event.preventDefault(); // ← Makes origioonal delete btn stop working
 		var burger_id = $(this).data("id");
 		console.log(burger_id);
 		$.ajax({
