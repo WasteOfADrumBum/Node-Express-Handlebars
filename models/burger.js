@@ -30,8 +30,7 @@ const burger = {
 	}, // → orm.js updateOne
 
 	deleteOne: (id, cb) => {
-		const condition = "id = " + id;
-		orm.deleteOne("burgers", condition, cb);
+		orm.deleteOne("burgers", id, cb);
 	}, // → orm.js deleteOne
 };
 

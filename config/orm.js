@@ -51,9 +51,8 @@ const orm = {
 
 	// burger.js deleteOne →
 	deleteOne: (tableName, condition, cb) => {
-		var queryString = `DELETE FROM ?? WHERE ${condition}`;
-		// delete burger
-		connection.query(queryString, [tableName], (err, res) => {
+		var queryString = `DELETE FROM ${tableName} WHERE ${condition}`;
+		connection.query(queryString, (err, res) => {
 			if (err) throw err;
 			cb(res);
 		});

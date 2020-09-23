@@ -40,11 +40,15 @@ router.get("/api/burger/update", (req, res) => {
 	});
 });
 
-router.post("/api/burger/delete", (req, res) => {
-	console.log(req.body);
-	burger.deleteOne(req.body.id, (result) => {
-		res.redirect("/");
-	}); // → burgers.js
+router.delete("/api/burger/:id", (req, res) => {
+	const condition = `id = ${req.params.id}`;
+	burger.deleteOne(condition, (result) => {
+		if (result.affectedRows === 0) {
+			// if no rows were changed, the ID must not exist so 404
+			return res.status(404).end();
+		}
+		res.status(202).end();
+	});
 });
 
 // Export routes for server.js to use
