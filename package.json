@@ -2,7 +2,7 @@
 	"name": "handlebarshmwk",
 	"description": "A Handlebars view engine for Express which doesn't suck.",
 	"version": "3.1.0",
-	"homepage": "https://github.com/ericf/express-handlebars",
+	"homepage": "https://github.com/WasteOfADrumBum/Node-Express-Handlebars",
 	"keywords": [
 		"express",
 		"express3",
@@ -12,13 +12,12 @@
 		"partials",
 		"templates"
 	],
-	"author": "Eric Ferraiuolo <eferraiuolo@gmail.com> (http://ericf.me/)",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/ericf/express-handlebars.git"
+		"url": "git://github.com/WasteOfADrumBum/Node-Express-Handlebars.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ericf/express-handlebars/issues"
+		"url": "https://github.com/WasteOfADrumBum/Node-Express-Handlebars/issues"
 	},
 	"engines": {
 		"node": ">=0.10"
