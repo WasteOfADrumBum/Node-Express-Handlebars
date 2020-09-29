@@ -1,6 +1,6 @@
 {
 	"name": "handlebarshmwk",
-	"description": "A Handlebars view engine for Express which doesn't suck.",
+	"description": "A Handlebars view engine for Express.",
 	"version": "3.1.0",
 	"homepage": "https://github.com/WasteOfADrumBum/Node-Express-Handlebars",
 	"keywords": [
